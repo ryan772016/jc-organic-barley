@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JC Organic Barley - Premium Organic Barley Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d5016;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #5a9216;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #5a9216 0%, #2d5016 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Promo Section */
+        .promo-banner {
+            background: #fffbea;
+            border: 2px solid #f59e0b;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .promo-banner h3 {
+            color: #d97706;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .promo-banner p {
+            color: #92400e;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2rem;
+            color: #2d5016;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #5a9216;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: #5a9216;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .product-price.sale {
+            color: #d97706;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+
+        .order-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: #5a9216;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .order-btn:hover {
+            background: #2d5016;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: #f8f9fa;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2d5016;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #5a9216;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #5a9216;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #2d5016;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🌾 JC Organic Barley</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#barley-juice">Barley Juice</a></li>
+                <li><a href="#barley-coffee">Barley Coffee</a></li>
+                <li><a href="#contact">Order Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Premium Organic Barley Products</h1>
+        <p>Naturally Healthy • Organic • Pure</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            <h3>🎉 Special Promotion!</h3>
+            <p>Buy 5 Get 1 Free on JC Organic Barley Juice (10 sachet/box)</p>
+        </div>
+
+        <!-- Barley Juice Section -->
+        <section id="barley-juice">
+            <h2 class="section-title">Barley Juice</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🌱</div>
+                    <div class="product-info">
+                        <div class="product-name">August Promo: Buy 5 Get 1 Free</div>
+                        <div class="product-price sale">
+                            $175.00 <span class="original-price">$210.00</span>
+                        </div>
+                        <button class="order-btn" onclick="orderProduct('August Promo', '$175.00')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🌾</div>
+                    <div class="product-info">
+                        <div class="product-name">JC Organic Barley Juice (10 sachet/box)</div>
+                        <div class="product-price">$40.00</div>
+                        <button class="order-btn" onclick="orderProduct('Organic Barley Juice', '$40.00')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">✨</div>
+                    <div class="product-info">
+                        <div class="product-name">JC Organic Barley Gold (1x10 Sticks)</div>
+                        <div class="product-price">$40.00</div>
+                        <button class="order-btn" onclick="orderProduct('Barley Gold', '$40.00')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🫚</div>
+                    <div class="product-info">
+                        <div class="product-name">JC Ginger Barley (1x10 Sticks)</div>
+                        <div class="product-price">$55.00</div>
+                        <button class="order-btn" onclick="orderProduct('Ginger Barley', '$55.00')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🥥</div>
+                    <div class="product-info">
+                        <div class="product-name">JC Coco Barley (1x10 Sticks)</div>
+                        <div class="product-price">$65.00</div>
+                        <button class="order-btn" onclick="orderProduct('Coco Barley', '$65.00')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barley Coffee Section -->
+        <section id="barley-coffee">
+            <h2 class="section-title">Barley Coffee</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">☕</div>
+                    <div class="product-info">
+                        <div class="product-name">JC Barley Black Coffee (1x10 Sticks)</div>
+                        <div class="product-price">$22.00</div>
+                        <button class="order-btn" onclick="orderProduct('Barley Black Coffee', '$22.00')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">☕</div>
+                    <div class="product-info">
+                        <div class="product-name">JC Barley Coffee Classic (1x10 Sticks)</div>
+                        <div class="product-price">$35.00</div>
+                        <button class="order-btn" onclick="orderProduct('Barley Coffee Classic', '$35.00')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🍫</div>
+                    <div class="product-info">
+                        <div class="product-name">JC Organic Barley Coffee Mocha (1x10 Sticks)</div>
+                        <div class="product-price">$38.00</div>
+                        <button class="order-btn" onclick="orderProduct('Barley Coffee Mocha', '$38.00')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/Order Form -->
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">Place Your Order</h2>
+            <form class="contact-form" id="orderForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product">Product</label>
+                    <select id="product" name="product">
+                        <option value="">Select a product</option>
+                        <option value="August Promo - Buy 5 Get 1 Free">August Promo - Buy 5 Get 1 Free ($175.00)</option>
+                        <option value="JC Organic Barley Juice">JC Organic Barley Juice ($40.00)</option>
+                        <option value="JC Organic Barley Gold">JC Organic Barley Gold ($40.00)</option>
+                        <option value="JC Ginger Barley">JC Ginger Barley ($55.00)</option>
+                        <option value="JC Coco Barley">JC Coco Barley ($65.00)</option>
+                        <option value="JC Barley Black Coffee">JC Barley Black Coffee ($22.00)</option>
+                        <option value="JC Barley Coffee Classic">JC Barley Coffee Classic ($35.00)</option>
+                        <option value="JC Organic Barley Coffee Mocha">JC Organic Barley Coffee Mocha ($38.00)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Delivery Address *</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Notes</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Any special requests or questions?"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Order</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 JC Organic Barley. All rights reserved.</p>
+        <p>Premium Organic Barley Products from New Zealand</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function orderProduct(productName, price) {
+            const productSelect = document.getElementById('product');
+            const options = productSelect.options;
+            
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].text.includes(productName)) {
+                    productSelect.selectedIndex = i;
+                    break;
+                }
+            }
+            
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                product: document.getElementById('product').value,
+                quantity: document.getElementById('quantity').value,
+                address: document.getElementById('address').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Create email body
+            const emailBody = `
+New Order Request:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Product: ${formData.product}
+Quantity: ${formData.quantity}
+Delivery Address: ${formData.address}
+Additional Notes: ${formData.message}
+            `;
+            
+            // Open email client (you can replace this with your email)
+            window.location.href = `mailto:orders@jcorganicbarley.co.nz?subject=New Order from ${formData.name}&body=${encodeURIComponent(emailBody)}`;
+            
+            alert('Thank you for your order! Your email client will open. Please send the email to complete your order.');
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+                
+                // Close mobile menu if open
+                if (window.innerWidth <= 768) {
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
